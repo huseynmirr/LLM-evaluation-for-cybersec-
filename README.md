@@ -35,8 +35,8 @@ Models were run locally using **Ollama** with the following default parameters:
 ```
 Temperature: 0.0 (baseline), 0.5, 1.0
 Top-p: 0.9
-Max tokens: 1000
-Context window: 1024
+Max tokens: 4096
+Context window: 8192
 ```
 
 We evaluated models across 22 questions in 5 categories:
