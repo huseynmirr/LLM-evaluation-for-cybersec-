@@ -242,17 +242,7 @@ Average scores per question category for each finalist model.
 | Custom Questions | 3.7 | 3.8 | 3.6 | 3.7 |
 | **Overall Average** | **4.0** | **4.0** | **4.0** | **3.9** |
 
-### 4.2 Detailed Scores
-
-Detailed per-question scoring is provided in the attached evaluation spreadsheet due to dataset size. Table 4.2 summarizes the full scoring matrix reference.
-
-| Question | ZySec Accuracy | ZySec Completeness | ZySec Applicability | Qwen-Uncensored Accuracy | ... |
-|----------|---------------|-------------------|--------------------|-----------------------|-----|
-| Q1 | | | | | |
-| Q2 | | | | | |
-| ... | | | | | |
-
-### 4.3 Offensive Security Refusal Scores
+### 4.2 Offensive Security Refusal Scores
 
 How willing was each model to answer offensive security questions?
 
@@ -525,20 +515,10 @@ Overall, the evaluation suggests that the tested models performed best on well-d
 - **Best model for offensive security tasks specifically:** **CTFsolver** — CTFsolver demonstrated the strongest performance in offensive-security, code-review, and practical exploit-related tasks while maintaining strong technical depth.
 - **Models to avoid:** **NVIDIA-Orchestrator-Cybersecurity-8B**, **XSS-strix-8B**, and other rejected screening candidates that demonstrated poor practical reliability or unstable execution.
 
-### 9.3 Limitations of This Evaluation
-
-Testing was performed on consumer hardware with 8 GB RAM, limiting the ability to evaluate larger models or run higher-context / less-quantized variants. Although structured scoring criteria were used, response evaluation still involved subjective human judgment, particularly when assessing completeness and practical usefulness. Only temperature was varied during parameter testing — other inference parameters such as top_p, repetition penalty, and system prompting were not explored in depth. While multiple models were screened, the full open-source LLM ecosystem is substantially larger than the tested subset. All models were evaluated using quantized GGUF variants for local inference, which may have slightly impacted response quality relative to full-precision versions.
-
-With more time and resources, future work could include testing larger 13B+ models on stronger hardware, evaluating additional inference parameters, expanding the question set further, and comparing quantized vs full-precision performance.
-
----
 
 ## Appendix: Environment and Reproducibility
-
-- **Hardware used:** Student 1: Intel Core i5-10300H @ 2.50 GHz (4 cores / 8 threads), 8 GB RAM, NVIDIA GeForce GTX 1650, Intel UHD Graphics. Student 2: Apple M1, 8 cores total (4 performance / 4 efficiency), 8 GB RAM, Apple M1 GPU (8 cores, integrated).
-- **Operating system:** Microsoft Windows 11 Home; macOS Sequoia
 - **Cloud environment (if used):** N/A — local inference only
 - **Inference tool:** Ollama (local inference), Visual Studio Code
 - **Python version:** 3.14.3
 - **Key library versions:** Ollama Python Package (ollama)
-- **Default parameters used:** Temperature: 0.0 (baseline), Top-p: 0.9, Max Tokens (num_predict): 1000, Context Window (num_ctx): 1024. Token limits were capped at 1000 during the primary evaluation due to RAM limitations on the testing hardware (8 GB RAM). Higher token limits caused memory exhaustion or unstable inference on several models.
+- **Default parameters used:** Temperature: 0.0 (baseline), Top-p: 0.9, Max Tokens (num_predict): 4096, Context Window (num_ctx): 8192. 
