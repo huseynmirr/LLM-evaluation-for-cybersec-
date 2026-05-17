@@ -64,8 +64,8 @@ for model in models:
                     options={
                         "temperature": temp,
                         "top_p": 0.9,
-                        "num_predict": 1000,
-                        "num_ctx": 1024
+                        "num_predict": 4096,
+                        "num_ctx": 8192
                     }
                 )
 
