@@ -1,11 +1,5 @@
 # LLM Evaluation Report
 
-**Course:** Advanced Python for Cybersecurity
-
-**Team members:** Huseyn Mirjavadov, Evgenia Gammer
-
-**Date:** 28.04.2026
-
 ---
 
 ## 1. Search Strategy
